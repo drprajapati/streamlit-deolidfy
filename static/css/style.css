@@ -1,0 +1,33 @@
+body{
+    text-align: center;
+    color: white;
+    background-color: darkred;
+}
+.card-header{
+    text-align: center;
+}
+.card{
+    height: 20%;
+    display: inline-block;
+    text-align: justify;
+    color: black;
+    margin: 10pt auto;
+    width: 40%;
+}
+.row{
+    margin-bottom: 8pt;
+}
+
+form{
+    padding: 0pt 24pt;
+}
+.border-image{
+    /* width: 100%;
+    height: 0;
+    padding-top: 70%;
+    border:2pt solid #ccc;
+    position: relative; */
+    margin: 0 auto;
+    width: 75%;
+    height: 75%;
+}

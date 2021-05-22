@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Image Colorization</title>
+	
+    <link href="G:\ConcordiaUniversity\Work Study Tasks\Articles\Week 3\DeOldify-master\templates\css\bootstrap.min.css" rel="stylesheet">
+	<script src="G:\ConcordiaUniversity\Work Study Tasks\Articles\Week 3\DeOldify-master\templates\js\jquery.min.js"></script>
+    <script src="G:\ConcordiaUniversity\Work Study Tasks\Articles\Week 3\DeOldify-master\templates\js\bootstrap.min.js"></script>
+    <script src="G:\ConcordiaUniversity\Work Study Tasks\Articles\Week 3\DeOldify-master\templates\js\scripts.js"></script>
+
+  </head>
+  <body>
+	
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<form role="form" method="post" action="/" enctype="multipart/form-data"><br><br>
+				<h3 class="text-primary text-center">
+					Image Colorization
+				</h3><br>
+				<div class="form-group">
+					<label for="exampleInputFile">
+						Upload Image
+					</label>
+					<input type="file" name="files[]" multiple="true" autocomplete="off" required>
+				</div>
+				<button type="submit" class="btn btn-primary" value="Submit">
+					Submit
+				</button>
+			</form><br><br><br>
+			<div class="row">
+				<div class="col-md-6">
+					<h2>
+						Original Image
+					</h2><br><img src="{{ url_for('display_image', filename=filename) }}" class = 'img-thumbnail'>
+				</div>
+				<div class="col-md-6">
+					<h2>
+						Colored Image
+					</h2><br>
+					<div class="progress">
+						<div class="progress-bar w-75">
+						</div>
+					</div><br><img src="{{ url_for('display_image', filename=filename) }}" class="img-thumbnail">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+  </body>
+</html>

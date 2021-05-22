@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Image Colorization</title>
+
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
+</head>
+
+<body>
+	<p>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+	<ul class=flashes>
+		{% for message in messages %}
+		<li>{{ message }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% endwith %}
+	</p>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class='col'>
+					<div class="card">
+						<h5 class="card-header">
+							Image Colorization
+						</h5>
+						<div class="card-body">
+							<form role="form" method="post" action="/" enctype="multipart/form-data"><br><br>
+								<div class="form-group">
+									<label for="exampleInputFile">
+										Upload Image
+									</label>
+									<input type="file" name="files[]" multiple="true" autocomplete="off" required>
+								</div>
+								<button type="submit" class="btn btn-primary" value="Submit">
+									Submit
+								</button>
+								<!-- <button type="submit" id = "processButton" class="btn btn-success" value="Submit">
+									Process
+								</button> -->
+							</form><br><br><br>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<h2 class="text text-center">
+							Original Image
+						</h2><br>
+					</div>
+					<div class="col-md-6">
+						<h2 class="text text-center">
+							Colored Image
+						</h2><br>
+					</div>
+					<div class="col-md-6">
+						<div class="border-image">
+							{% if filenames %}
+							{% for filename in filenames %}
+							<img src="{{ url_for('display_image', filename=filename) }}" class="img-thumbnail">
+							{% endfor %}
+							{% endif %}
+
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="border-image">
+							{% if filenames %}
+							{% for filename in filenames %}
+							<img src="{{ url_for('results', filename=filename) }}" class="img-thumbnail">
+							{% endfor %}
+							{% endif %}
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+			<!-- <form role='form' method="post" action="/" enctype="multipart/form-data">
+				<dl>
+					<p>
+						<input type="file" name="files[]" multiple="true" autocomplete="off" required>
+					</p>
+				</dl>
+				<p>
+					<input type="submit" value="Submit">
+				</p>
+			</form> -->
+
+
+		</div>
+	</div>
+	<!-- <script type=text/javascript> $(function() { $("#process_button").click(function (event) { $.getJSON('/process_image', { },
+		function(data) { }); return false; }); }); </script> -->
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+
+</html>
