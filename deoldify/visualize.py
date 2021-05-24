@@ -391,7 +391,7 @@ def get_stable_video_colorizer(
 
 
 def get_image_colorizer(
-    root_folder: Path = Path('/'), render_factor: int = 35, artistic: bool = True
+    root_folder: Path = Path('../'), render_factor: int = 35, artistic: bool = True
 ) -> ModelImageVisualizer:
     if artistic:
         return get_artistic_image_colorizer(root_folder=root_folder, render_factor=render_factor)
