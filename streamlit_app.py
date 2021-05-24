@@ -13,7 +13,7 @@ import torch
 import streamlit as st
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
-image_colorizer = get_image_colorizer(root_folder=Path('/app/streamlit-deolidfy/deoldify/models/'), artistic=True)
+image_colorizer = get_image_colorizer(root_folder=Path('/app/streamlit-deolidfy/deoldify/'), artistic=True)
 print(image_colorizer)
 
 if torch.cuda.is_available():
