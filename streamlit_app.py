@@ -1,5 +1,4 @@
 import uuid
-
 from deoldify.visualize import *
 from app_utils import download
 from app_utils import generate_random_filename

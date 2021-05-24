@@ -3,7 +3,7 @@ requests==2.22.0
 notebook==6.2.0
 youtube_dl==2020.3.24
 streamlit==0.81.1
-opencv_python==4.5.1.48
+opencv-python==4.5.1.48
 tqdm==4.59.0
 numpy==1.20.1
 matplotlib==3.4.1
